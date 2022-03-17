@@ -48,3 +48,9 @@
 ## Scripting and testing glue
 
 - Great for writing concise and maintainable tests, and for all your build and automation tasks
+
+## From Java to Groovy
+
+- Groovy is not to replace java
+- Groovy is to build java
+- Groovy is to make java concise
