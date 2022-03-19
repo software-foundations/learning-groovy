@@ -1,12 +1,12 @@
 # Install java via
-# https://openjdk.java.net/install/
+- https://openjdk.java.net/install/
 
 ```console
 sudo apt-get install openjdk-8-jre
 ```
 
 # Switch java installed via apt
-# https://askubuntu.com/questions/461754/switching-java-version-through-apt
+- https://askubuntu.com/questions/461754/switching-java-version-through-apt
 
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
@@ -374,14 +374,33 @@ output:
 	
 ```
 
-- 
+# From java to groovy
 
-```console
+In groovy ...
+
+- We dont need any import statment, 'cause it is made by default
+- Method and classes are, by default, public
+- 'return' statemen can be ommited
+- ';' can be ommited
+- Properties are private by default
+- Getting and setting are created by default (can be ommited)
+- We don't need a constructor
+- println"" instead of System.out.println("")
+- Template string: "Hi, my name is $name"
+- $ access properties in a class
+
+- Use this to format print a class in a string
+```groovy
+@groovy.transform.ToString()
+class Person { ... }
 ```
 
-- 
-
-```console
+- The above substitue the bellow
+```groovy
+@Override
+public String toString(){
+    return "Person[first=" + firstName + ",last=" + lastName + "]";
+}
 ```
 
 - 

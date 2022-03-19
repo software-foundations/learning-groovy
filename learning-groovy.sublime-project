@@ -6,7 +6,7 @@
 			"name": "Console",						
 			"variants": [
 				{
-					"name": "Groovy",
+					"name": "Groovy 2.4.15",
 					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/./groovy\" \"$file\"",
 				},
 			],
@@ -32,8 +32,8 @@
 			"variants":
 			[
 				{
-					"name": "Groovy",
-					"shell_cmd": "\"groovy\" \"$file\"",
+					"name": "Groovy 2.4.15",
+					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/./groovy\" \"$file\"",
 				},
 			],
 			"working_dir": "$file_path",
@@ -47,6 +47,9 @@
 		},
 		{
 			"path": "../clone/apache-groovy-course/"
+		},
+		{
+			"path": "../clone-apache-groovy-course/"
 		}
 	]
 }
