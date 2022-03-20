@@ -1,3 +1,59 @@
+# Resume
+
+## Setup environment
+
+- 01 - Installing java
+
+```console
+sudo apt-get install openjdk-8-jre
+```
+
+- 02 - Switch java installed via apt
+
+```console
+sudo update-alternatives --config javac
+sudo update-alternatives --config java
+```
+
+- 03 - Install sdkman
+
+```console
+curl -s "https://get.sdkman.io" | bash
+```
+
+- 04 - Install groovy 2.4.5
+
+```console
+sdk install groovy 2.4.15
+```
+
+- 05 - Set groovy 2.4.5 as default
+
+```console
+sdk default groovy 2.4.15
+```
+
+- 06 - Use groovy 2.4.5 in shell
+
+```console
+sdk use groovy 2.4.15
+```
+	
+## Execute groovy file
+
+```console
+groovy <fileName>.groovy
+```
+
+## Compile groovy file
+
+```console
+groovyc <fileName>.groovy
+```
+--
+End of Resume
+--
+
 # Install java via
 - https://openjdk.java.net/install/
 
@@ -401,35 +457,5 @@ class Person { ... }
 public String toString(){
     return "Person[first=" + firstName + ",last=" + lastName + "]";
 }
-```
-
-- 
-
-```console
-```
-
-- 
-
-```console
-```
-
-- 
-
-```console
-```
-
-- 
-
-```console
-```
-
-- 
-
-```console
-```
-
-- 
-
-```console
 ```
 

@@ -214,3 +214,57 @@ println(d.languages)
 ```console
 [Groovy, Java]
 ```
+
+- Tweet.groovy
+```groovy
+@groovy.transform.ToString()
+class Tweet {
+
+    // properties
+    String username
+    String text
+    Integer retweets
+    Integer favorites
+    Date createdOn
+
+    // constructor
+    public Tweet(String username, String text) {
+        this.username = username
+        this.text = text
+        retweets = 0
+        favorites = 0
+        createdOn = new Date()
+
+    }
+
+    void addToRetweets() {
+        retweets += 1
+    }
+
+    void addToFavorites () {
+        favorites += 1
+    }
+
+}
+```
+
+Note, at the constructor, if we have a parameter with the
+same name of a property, we must to use 'this' when reffers
+to property
+
+Indeed, if we use different parameter names, we don't need
+to use 'this'
+
+- Tweeter.groovy
+```groovy
+def tweet = new Tweet('Bruno', 'Hello, Twitter!')
+
+println(tweet)
+
+// Tweet(null, null, 0, 0, Sun Mar 20 12:57:03 BRT 2022)
+
+```
+
+```console
+Tweet(Bruno, Hello, Twitter!, 0, 0, Sun Mar 20 13:41:03 BRT 2022)
+```
