@@ -20,7 +20,9 @@
 	sdk use groovy 2.4.15
 
 # -> execute groovy file
-groovy keywords.groovy
+groovy assertions.groovy
+
 
 # -> compile groovy file
-groovyc keywords.groovy
+groovyc assertions.groovy
+

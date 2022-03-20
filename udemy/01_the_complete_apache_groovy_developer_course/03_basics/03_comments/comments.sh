@@ -20,7 +20,11 @@
 	sdk use groovy 2.4.15
 
 # -> execute groovy file
-groovy keywords.groovy
+groovy comments_01_line.groovy
+groovy comments_02_multiple_lines.groovy
+groovy comments_03_shebang.groovy
 
 # -> compile groovy file
-groovyc keywords.groovy
+groovyc comments_01_line.groovy
+groovyc comments_02_multiple_lines.groovy
+groovyc comments_03_shebang.groovy

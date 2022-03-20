@@ -11,16 +11,20 @@
 	curl -s "https://get.sdkman.io" | bash
 
 	# 04 - install groovy 2.4.5
-	sdk install groovy 2.5.6
+	sdk install groovy 2.4.15
 
 	# 05 - set groovy 2.4.5 as default
-	sdk default groovy 2.4.5
+	sdk default groovy 2.4.15
 
 	# 06 - use groovy 2.4.5 in shell
 	sdk use groovy 2.4.15
 
 # -> execute groovy file
-groovy finish.groovy
+groovy imports_01.groovy
+groovy imports_02.groovy
+groovy imports_03.groovy
 
 # -> compile groovy file
-groovyc finish.groovy
+groovyc imports_01.groovy
+groovyc imports_02.groovy
+groovyc imports_03.groovy
