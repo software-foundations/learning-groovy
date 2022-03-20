@@ -102,3 +102,11 @@ assert (x << 6) == [6,7,8,9,10]
         | |     |               
         1 64    false  
 ```
+
+# Scripts
+
+- A script is a groovy code not enclosed in a class file
+
+- Indeed, don't make the mistake thinking there is no class
+
+- The groovy will compile the script into a class in the body of a run method
