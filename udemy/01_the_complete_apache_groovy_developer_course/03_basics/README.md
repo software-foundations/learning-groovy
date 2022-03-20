@@ -110,3 +110,107 @@ assert (x << 6) == [6,7,8,9,10]
 - Indeed, don't make the mistake thinking there is no class
 
 - The groovy will compile the script into a class in the body of a run method
+
+# Classes
+
+- In contrast of java, groovy allow a file not has the same name of the class wich is enclosed by the file
+
+- When use groovyc to compile a file, it export all classes in respective <class_name>.class file
+
+- Classes are public by default
+
+- Methods are public by default
+
+- classes.groovy
+
+```groovy
+class AngryBirds {
+
+}
+
+class Bird {
+
+}
+
+class Pig {
+
+}
+
+```
+
+```console
+groovyc classes.groovy
+```
+
+```console
+ls -l
+```
+
+```console
+AngryBirds.class  Bird.class  classes.groovy  Pig.class
+```
+
+- def keyword: to just not typing a variable
+
+- We Must use 'def' when the class has not a constructor
+
+- Developer.groovy
+
+```groovy
+@groovy.transform.ToString()
+class Developer {
+
+    // 3 properties
+    
+    String first // String
+    String last // String
+
+    // def is to not type
+    def languages = []
+
+    // method (public by default)
+    // means that 'public' can be ommited
+    void work(){
+        println("$first $last is working !")
+    }
+
+
+}
+
+```
+
+```groovy
+def d = new Developer()
+```
+
+- Twe different ways to set the properties
+- It works with get, too
+
+```groovy
+d.first = "Bruno"
+d.setLast("Conde")
+```
+
+- Two different ways to get a class of a property
+```groovy
+println(d.languages.getClass().getName())
+println(d.languages.class)
+```
+
+```console
+java.util.ArrayList
+class java.util.ArrayList
+```
+- When the class has a constructor, we use the class name in the place of 'def'
+
+- Assign some value to a property
+```groovy
+d.languages << Groovy
+d.languages << Python
+
+println(d.languages)
+```
+
+```console
+[Groovy, Java]
+```
