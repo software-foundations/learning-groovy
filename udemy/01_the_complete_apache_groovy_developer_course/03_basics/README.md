@@ -304,3 +304,207 @@ def z = 5.5d
 // class java.lang.Double
 println(z.class)
 ```
+
+# Control Structure
+
+## if
+
+```groovy
+if (true) {
+    println("Expression is True")
+}
+
+// falsy values:
+// false | null | empty strings | empty collection
+
+if (false) {
+    println("Expression is False")
+}
+
+if (!false) {
+    println("Expression is !False = True")
+}
+
+String name = null
+
+// false
+if (name) {
+    println("name has a value")
+}
+
+name = 'Bruno'
+
+// true
+if (name) {
+    println("name has a value: $name")
+}
+
+name = ""
+
+// false
+if (name) {
+    println("name has a value: $value")
+}
+```
+
+```console
+Expression is True
+Expression is !False = True
+name has a value: Bruno
+```
+
+## if/else
+
+```groovy
+def num = 10
+
+if (num == 10) {
+    println("num is 10")
+} else {
+    println("num is NOT 10")
+}
+```
+
+```console
+num is 10
+```
+
+```groovy
+def num = 5
+
+if (num == 10) {
+    println("num is 10")
+} else {
+    println("num is NOT 10")
+}
+```
+
+```console
+num is NOT 10
+```
+
+## while
+
+```groovy
+def i = 1
+
+while (i < 10) {
+    println(i)
+    i += 1
+}
+```
+
+```console
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+## for in list
+
+```groovy
+def li = [1, 2, 3, 4]
+
+for (elem in li) {
+    println(elem)
+}
+```
+
+```console
+1
+2
+3
+4
+```
+
+## closure
+
+```groovy
+def li2 = [1, 2, 3, 4]
+
+// we must to use 'it' when use .each to iterate
+
+li2.each { println it }
+```
+
+```console
+1
+2
+3
+4
+```
+
+## switch
+
+```groovy
+def myNumber = 1
+
+switch (myNumber) {
+
+    case 1:
+        println "Number is 1"
+        break
+
+    case 2:
+        println "Number is 2"
+        break
+
+    default:
+        println "Number is not either 1 and 2. It is $myNumber"
+}
+```
+
+```console
+Number is 1
+```
+
+```groovy
+myNumber = 2
+
+switch (myNumber) {
+
+    case 1:
+        println "Number is 1"
+        break
+
+    case 2:
+        println "Number is 2"
+        break
+
+    default:
+        println "Number is not either 1 and 2. It is $myNumber"
+}
+```
+
+```console
+Number is 2
+```
+
+```groovy
+myNumber = 10
+
+switch (myNumber) {
+
+    case 1:
+        println "Number is 1"
+        break
+
+    case 2:
+        println "Number is 2"
+        break
+
+    default:
+        println "Number is not either 1 and 2. It is $myNumber"
+}
+```
+
+```console
+Number is not either 1 and 2. It is 10
+```

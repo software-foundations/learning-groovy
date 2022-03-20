@@ -46,18 +46,24 @@
 			],
 			"working_dir": "$file_path",
 		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		},
 	],
 
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
 		},
 		{
-			"path": "../clone/apache-groovy-course/"
+			"path": "../clone/apache-groovy-course/",
 		},
 		{
-			"path": "../clone-apache-groovy-course/"
+			"path": "../clone-apache-groovy-course/",
 		}
-	]
+	],
 }

@@ -50,9 +50,11 @@ groovy <fileName>.groovy
 ```console
 groovyc <fileName>.groovy
 ```
---
+---
+
 End of Resume
---
+
+---
 
 # Install java via
 - https://openjdk.java.net/install/
