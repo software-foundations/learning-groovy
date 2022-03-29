@@ -49,9 +49,11 @@ class Person { ... }
 ```
 
 # Assertion
+- https://stackoverflow.com/questions/12645142/groovy-assert-how-to-display-the-value
 
 - Is a statement in java programming language
 - We often see assertions in tests
+- Program breaks if expression in assertion statement is false
 
 - We have 3 scenarios to apply assertions
 
@@ -307,6 +309,8 @@ println(z.class)
 
 # Control Structure
 
+- http://groovy-lang.org/semantics.html#_control_structures
+
 ## if
 
 ```groovy
@@ -508,3 +512,34 @@ switch (myNumber) {
 ```console
 Number is not either 1 and 2. It is 10
 ```
+
+# Annotaions and AST transformations
+- http://groovy-lang.org/objectorientation.html#_annotation
+- http://docs.groovy-lang.org/next/html/gapi/groovy/transform/package-summary.html
+- http://docs.groovy-lang.org/next/html/gapi/groovy/transform/Immutable.html
+
+- We can use annotation in groovy just as we can in java
+- in most part of time, we are consumers of annotations
+- We can create our own annotations, too
+
+- Annotation Type Immutable (groovy.transform.immutable)
+- http://docs.groovy-lang.org/next/html/gapi/groovy/transform/Immutable.html
+
+```groovy
+@ToString(cache: true, includeSuperProperties: true)
+@EqualsAndHashCode(cache: true)
+@ImmutableBase
+@ImmutableOptions
+@PropertyOptions(propertyHandler: ImmutablePropertyHandler)
+@TupleConstructor(defaults: false)
+@MapConstructor(noArg: true, includeSuperProperties: true, includeFields: true)
+@KnownImmutable
+@AnnotationCollector(mode: AnnotationCollectorMode.PREFER_EXPLICIT_MERGED)
+@Retention(value: RetentionPolicy.RUNTIME)
+@Target(value: [ElementType.TYPE])
+@interface Immutable
+```
+
+- When execute groovy script
+01. Compile the classes that it depends.
+02. Executes the script
