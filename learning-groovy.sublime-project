@@ -13,6 +13,10 @@
 					"name": "Groovy Compiler 2.4.15",
 					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/groovyc\" \"$file\"",
 				},
+				{
+					"name": "firefox",
+					"shell_cmd": "\"firefox\" \"$file\"",
+				},
 			],
 		},
 
@@ -42,6 +46,10 @@
 				{
 					"name": "Groovy Compiler 2.4.15",
 					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/groovyc\" \"$file\"",
+				},
+				{
+					"name": "firefox",
+					"shell_cmd": "\"firefox\" \"$file\"",
 				},
 			],
 			"working_dir": "$file_path",

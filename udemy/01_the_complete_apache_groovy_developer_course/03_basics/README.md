@@ -543,3 +543,72 @@ Number is not either 1 and 2. It is 10
 - When execute groovy script
 01. Compile the classes that it depends.
 02. Executes the script
+
+# Using AST Transformations
+
+## @Canonical
+
+- The @Canonical meta-annotation comnbines the @EqualsAndHashCode, @ToString and @TupleConstructor annotations.
+
+- It is used to assist in the creation of mutable classes.
+
+- It instructs the compiles to execute AST transformations which add positional constructors, equals, hashCode and pretty a pretty toString to your class
+
+class_file.groovy
+```groovy
+    import groovy.transform.Canonical
+
+    @Canonical class Customer {
+        String first, last
+        int age
+        Date since
+        Collection favItems = ['Food']
+        def object
+    }
+```
+
+app_file.groovy
+```groovy
+    // this import is optional
+    // import Customer
+
+    def d = new Date()
+
+    def anyObject = new Object()
+
+    def c1 = new Customer(
+        first:'Tom',
+        last:'Jones',
+        age:21,
+        since:d,
+        favItems:['Books', 'Games'],
+        object: anyObject)
+
+    def c2 = new Customer(
+        'Tom',
+        'Jones',
+        21,
+        d,
+        ['Books', 'Games'],
+        anyObject)
+
+    assert c1 == c2
+```
+
+Compile the class
+```console
+groovyc class_file.groovy
+ls
+```
+
+```console
+output:
+    -rw-rw-r-- 1 bruno bruno 9020 mar 30 06:52 Customer.class
+    -rw-rw-r-- 1 bruno bruno  318 mar 30 06:51 class_file.groovy
+    -rw-rw-r-- 1 bruno bruno  318 mar 30 06:51 app_file.groovy
+```
+
+execute the app
+```console
+groovy app_file.groovy
+```

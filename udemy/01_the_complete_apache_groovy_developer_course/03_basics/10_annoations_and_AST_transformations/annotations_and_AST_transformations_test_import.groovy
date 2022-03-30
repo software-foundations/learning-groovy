@@ -31,6 +31,10 @@ println(c2)
 println(c1 == c2)
 
 assert c1 == c2 : "c1 != c2" // will display nothing
+
+// error: Cannot set readonly property: first for class: Customer
+// c1.first = "Peter"
+
 assert (c1 != c2) : "c1 == c2" // will raises a "c1 == c2" int the error message
 
 println "END" // will not be printed because the assertion statement failed
