@@ -612,3 +612,56 @@ execute the app
 ```console
 groovy app_file.groovy
 ```
+
+## @Sortable
+
+- http://docs.groovy-lang.org/2.4.15/html/gapi/index.html?groovy/beans/Bindable
+- It is a class annotation used to make a class Comparable by multiple Comparators
+- Allows sorting
+
+class_file.groovy
+```groovy
+// -> preferred import way
+import groovy.transform.ToString
+import groovy.transform.Sortable
+
+// -> alternative import way
+// import groovy.transform.*
+
+@ToString
+@Sortable
+class Person {
+    String first
+    String last
+}
+```
+
+sortable_app.groovy
+```groovy
+```
+
+compile the class
+```console
+groovyc sortable_class.groovy
+ls -l
+```
+
+```console
+output:
+    -rw-rw-r-- 1 bruno bruno 5039 abr  3 10:53 'Person$FirstComparator.class'
+    -rw-rw-r-- 1 bruno bruno 5035 abr  3 10:53 'Person$LastComparator.class'
+    -rw-rw-r-- 1 bruno bruno 6609 abr  3 10:53  Person.class
+    -rw-rw-r-- 1 bruno bruno 6609 abr  3 10:53  sortable_app.class
+    -rw-rw-r-- 1 bruno bruno 6609 abr  3 10:53  sortable_class.class
+```
+
+execute sortable_app.groovy
+```console
+groovy sortable_app.class
+```
+
+```console
+output:
+   [Person(Cassio, Silva), Person(Bruno, Conde)]
+   [Person(Bruno, Conde), Person(Cassio, Silva)] 
+```

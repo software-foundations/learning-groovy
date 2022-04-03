@@ -3,25 +3,6 @@
 	[
 		{
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
-			"name": "Console",						
-			"variants": [
-				{
-					"name": "Groovy 2.4.15",
-					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/./groovy\" \"$file\"",
-				},
-				{
-					"name": "Groovy Compiler 2.4.15",
-					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/groovyc\" \"$file\"",
-				},
-				{
-					"name": "firefox",
-					"shell_cmd": "\"firefox\" \"$file\"",
-				},
-			],
-		},
-
-		{
-			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
 			"auto_close": false,
 			"focus": true,
 			"name": "Terminal",
@@ -53,6 +34,24 @@
 				},
 			],
 			"working_dir": "$file_path",
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Console",						
+			"variants": [
+				{
+					"name": "Groovy 2.4.15",
+					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/./groovy\" \"$file\"",
+				},
+				{
+					"name": "Groovy Compiler 2.4.15",
+					"shell_cmd": "\"/home/bruno/.sdkman/candidates/groovy/2.4.15/bin/groovyc\" \"$file\"",
+				},
+				{
+					"name": "firefox",
+					"shell_cmd": "\"firefox\" \"$file\"",
+				},
+			],
 		},
 		{
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
